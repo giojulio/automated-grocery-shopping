@@ -5,7 +5,8 @@ export class IListItem extends IItem{
         id: string,
         name: string,
         price: number,
-        private product_id: number,        
+        private product_id: number, 
+        private user_id: number,       
         private desired_qty: number
     ){
         super (

@@ -32,5 +32,10 @@ export abstract class BaseDatabase {
 			.where({id});
 	}
 
+	protected setNewObject = async(object: any): Promise<void> => {
+		await BaseDatabase.connection(this.TABLE_NAME)
+			.insert(object);
+	}
+
 	
 };

@@ -14,6 +14,14 @@ export class IProduct extends IItem {
         )
     }
 
+    getId() {
+        return this.id
+    }
+
+    getName() {
+        return this.name
+    }
+
     getPrice() {
         return this.price
     }
