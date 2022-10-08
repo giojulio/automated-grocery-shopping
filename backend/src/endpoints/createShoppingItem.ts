@@ -50,7 +50,7 @@ export const createListItem = async (req: Request, res: Response) => {
 			throw new Error(`Either user or any products were identified.`);
 
 		} else if (products.length !== verifiedProducts.length) {
-			const go = confirm(`There are some products in your request that aren't available. Do you wish to continue?`)
+			const go = confirm(`There are some products in your request that aren't available. Do you wish to continue?`);
 
 			switch (go) {
 				case (false):
@@ -59,7 +59,7 @@ export const createListItem = async (req: Request, res: Response) => {
 
 				case (true):
 					await new ShoppingListDatabase().setNewObject(convertToLI)
-						.then(() => {setMultipleStocks(convertToLI, totalStock)});
+						.then(() => {setMultiple(convertToLI, totalStock)});
 					
 					res.status(201).send("Shopping List order placed.");
 				break;
@@ -69,6 +69,8 @@ export const createListItem = async (req: Request, res: Response) => {
 					throw new Error ("Something went wrong, please try again.");
 			};
 		};
+
+
 		
 					
 	} catch (error: any) {
@@ -77,10 +79,10 @@ export const createListItem = async (req: Request, res: Response) => {
 };
 
 
-const setMultipleStocks = async(items: any[], totalStock: number[]): Promise<void> => {
-	let i = 0;
+const setMultiple = async(items: any[], totalStock: number[]): Promise<void> => {
+	
 
-	for ( i; i < items.length; i++ ) {
+	for ( let i = 0; i < items.length; i++ ) {
 		await new ProductDatabase()
 			.setNewValue(items[i].getId(), "stock", totalStock[i])
 	};
