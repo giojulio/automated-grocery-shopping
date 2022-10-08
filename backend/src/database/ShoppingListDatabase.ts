@@ -12,4 +12,8 @@ export class ShoppingListDatabase extends BaseDatabase {
     public setNewValue = async(id: any, column: string, value: any): Promise<void> => {
 		super.setNewValue(id, column, value)
 	}
+
+	public setNewObject = async(object: IListItem[]): Promise<void> => {
+		super.setNewObject(object)
+	}
 }
