@@ -3,10 +3,11 @@ import { BrowserRouter, Route, Routes } from "react-router-dom";
 import FeedPage from "../pages/Feed/FeedPage";
 import HomePage from "../pages/Home/HomePage";
 import LoginPage from "../pages/Login/LoginPage";
-import OrderPage from "../pages/Order/OrderPage";
 import RegisterPage from "../pages/Register/RegisterPage";
 import ShoppingListPage from "../pages/ShoppingList/ShoppingListPage";
-import UserPage from "../pages/User/UserPage";
+import ProfilePage from "../pages/Profile/ProfilePage";
+import AboutPage from "../pages/About/AboutPage"
+import ErrorPage from "../pages/Error/ErrorPage";
 
 
 export const Router = () => {
@@ -22,13 +23,13 @@ export const Router = () => {
 
                 <Route path="/feed" element={<FeedPage/>} /> 
 
-                <Route path="/order" element={<OrderPage/>} /> 
+                <Route path="/shopping-list" element={<ShoppingListPage/>} />
 
-                <Route path="/shoppinglist" element={<ShoppingListPage/>} />
-
-                <Route path="/user" element={<UserPage/>} /> 
+                <Route path="/profile" element={<ProfilePage/>} /> 
                 
-                <Route path="*" element={<ErrorPage />} /> 
+                <Route path="/about" element={<AboutPage />} /> 
+
+                <Route path="/*" element={<ErrorPage />} /> 
             </Routes>
         </BrowserRouter>
     );

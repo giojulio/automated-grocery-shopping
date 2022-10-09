@@ -1,33 +1,28 @@
-// export const goToHome = (navigate) => {
-//     navigate ("/");
-//   }
-//   export const goToLogin = (navigate) => {
-//     navigate ("/login");
-//   }
-//   export const goToFeed = (navigate) => {
-//     navigate ("/feed");
-//   }
-//   export const goToSignUp = (navigate) => {
-//     navigate ("/cadastro");
-//   }
-//   export const goToRegisterAdressPage = (navigate) => {
-//     navigate ("/registrar-endereco");
-//   }
-//   export const goToPerfil = (navigate) => {
-//     navigate ("/perfil");
-//   }
-//   export const goToEditProfile = (navigate) => {
-//     navigate ("/perfil/editar-perfil");
-//   }
-//   export const goToEditAdress = (navigate) => {
-//     navigate ("/perfil/editar-endereco");
-//   }
-//   export const goToRestaurant = (navigate, restaurantId) => {
-//     navigate (`/restaurant/${restaurantId}`);
-//   }
-//   export const goToSearch = (navigate) => {
-//     navigate ("/busca");
-//   }
-//   export const goToCart = (navigate) => {
-//     navigate ("/carrinho");
-//   }
+export const goToHome = (navigate) => {
+	navigate('/');
+	localStorage.setItem('token', '');
+};
+
+export const goToLogin = (navigate) => {
+	navigate('/login');
+};
+
+export const goToFeed = (navigate) => {
+	navigate('/feed');
+};
+
+export const goToRegister = (navigate) => {
+	navigate('/register');
+};
+
+export const goToShoppingList = (navigate) => {
+	navigate('/shopping-list');
+};
+
+export const goToProfile = (navigate) => {
+	navigate('/profile');
+};
+
+export const goToAbout = (navigate) => {
+	navigate('/about');
+};
