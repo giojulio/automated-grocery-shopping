@@ -3,7 +3,7 @@ import { Footer } from '../../components/Footer/Footer';
 import { Header } from '../../components/Header/Header';
 import { useProtectedPage } from '../../hooks/useProtectedPage';
 
-const FeedPage = () => {
+const ProfilePage = () => {
     useProtectedPage();
     
     return (
@@ -14,4 +14,4 @@ const FeedPage = () => {
     );
 };
 
-export default FeedPage;
+export default ProfilePage;
