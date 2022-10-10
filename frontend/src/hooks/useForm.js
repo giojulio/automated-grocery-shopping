@@ -3,16 +3,16 @@ import { useState } from "react";
 const useForm = (initialState) => {
   const [form, setForm] = useState(initialState);
 
-  const handleInputChange = (event) => {
+  const onChange = (event) => {
     const { value, name } = event.target;
     setForm({ ...form, [name]: value });
   };
 
-  const clear = () => {
+  const cleanFields = () => {
     setForm(initialState);
   };
 
-  return {form, setForm, handleInputChange, clear};
+  return {form, setForm, onChange, cleanFields};
 };
 
 export default useForm;
