@@ -4,7 +4,7 @@ import { useNavigate } from 'react-router-dom';
 import { Footer } from '../../components/Footer/Footer';
 import { Header } from '../../components/Header/Header';
 import useForm from '../../hooks/useForm';
-import { goToHome } from '../../routes/coordinator';
+import { goToFeed, goToHome } from '../../routes/coordinator';
 import { Container, Form } from './StyledLoginPage';
 
 const LoginPage = () => {
@@ -14,13 +14,13 @@ const LoginPage = () => {
   const onSubmitLogin = (event) => {
 		event.preventDefault()
 
-		const url = `ssss`;
+		const url = `api page/endpoint`;
 
 		axios
-			.post(url, form)
+			.get(url, form)
 			.then((response) => {
 				localStorage.setItem('token', Math.random());
-				navigate('/feed');
+				goToFeed(navigate);
 			})
 			.catch((error) => {
 				alert('E-mail/Password does not match database.');
@@ -51,8 +51,10 @@ const LoginPage = () => {
             type='password'
           />
           <button>Login</button>
-        </Form>
 
+          <a href='www.google.com'>Forgot your password?</a> {/* If time, create a change password page/endpoints*/}
+        </Form>
+        
         <button onClick={() => goToHome(navigate)}>Home</button>
 
         <Footer/>
