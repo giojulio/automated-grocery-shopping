@@ -29,11 +29,11 @@ export const GlobalStyles = createGlobalStyle`
         color: #02353C;
     }
 
-    input {
+    input, select {
         border-radius: 5px;
         border: solid 0.5px #449342;
         color: #02353C;
-        background-color: #449342;
+        background-color: white;
         font-weight: bolder;
         box-shadow: 1px 1px #02353C;
         padding: 5px;

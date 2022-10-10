@@ -9,6 +9,7 @@ const FeedPage = () => {
     return (
       <>
       <Header haveButton/>
+      
       <Footer/>
       </>
     );

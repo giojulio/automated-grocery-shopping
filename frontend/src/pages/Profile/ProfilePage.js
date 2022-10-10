@@ -9,6 +9,9 @@ const ProfilePage = () => {
     return (
       <>
       <Header haveButton/>
+      <div>orders</div>
+      <div>info</div>
+
       <Footer/>
       </>
     );
