@@ -6,8 +6,8 @@ import { Footer } from '../../components/Footer/Footer';
 import { Header } from '../../components/Header/Header';
 import useForm from '../../hooks/useForm';
 import { goToHome } from '../../routes/coordinator';
-import { Container, Form } from './StyledRegisterPage';
-
+import { Form } from './StyledRegisterPage';
+import { Container } from '../../components/Container/Container';
 
 const RegisterPage = () => {
 	const navigate = useNavigate();

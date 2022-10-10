@@ -5,7 +5,9 @@ import { Footer } from '../../components/Footer/Footer';
 import { Header } from '../../components/Header/Header';
 import useForm from '../../hooks/useForm';
 import { goToFeed, goToHome } from '../../routes/coordinator';
-import { Container, Form } from './StyledLoginPage';
+import { Form } from './StyledLoginPage';
+import { Container } from '../../components/Container/Container';
+
 
 const LoginPage = () => {
   const navigate = useNavigate();
