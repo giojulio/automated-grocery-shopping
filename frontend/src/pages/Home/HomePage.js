@@ -4,10 +4,10 @@ import { Footer } from '../../components/Footer/Footer';
 import { Header } from '../../components/Header/Header';
 import edit from '../../assets/edit.png'
 import profile from '../../assets/profile.png'
-import { Container, Icon, Option, OptionsContainer, Welcome } from './StyledHomePage';
+import { Icon, Option, OptionsContainer, Welcome } from './StyledHomePage';
 import { useNavigate } from 'react-router-dom';
 import { goToLogin, goToRegister } from '../../routes/coordinator';
-
+import { Container } from '../../components/Container/Container';
 
 const HomePage = () => {
     useProtectedPage();
