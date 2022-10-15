@@ -1,0 +1,83 @@
+### getAllProducts (OK)
+GET http://localhost:3306/products
+
+### getShoppingList (OK)
+GET http://localhost:3306/shp-list/79782e6a-4980-4cc0-b068-7bc320ca5483
+
+### createLogin (OK)
+POST http://localhost:3306/login
+Content-Type: application/json
+
+{
+    "email": "gi@gi.com",
+    "password": "pwd"
+}
+
+### createShoppingList (OK)
+POST http://localhost:3306/shp-list
+Content-Type: application/json
+
+{
+    "user_id": "79782e6a-4980-4cc0-b068-7bc320ca5483",
+    "products": [
+        { 
+            "id": "20",
+            "desired_qty": 40
+        },
+        { 
+            "id": "78",
+            "desired_qty": 1
+        }
+    ]
+}
+
+### createUser (OK)
+POST http://localhost:3306/register
+Content-Type: application/json
+
+{
+    "name": "Gina",
+    "zipcode": "80730460",
+    "number": 2974,
+    "complement": "AP02",
+    "day": 7,
+    "email": "gi@gi.com",
+    "password": "pwd"
+}
+
+### deleteShoppingList
+DELETE http://localhost:3306/shp-list
+Content-Type: application/json
+
+{
+    "user_id": "3acf36e4-ed0a-458b-98b0-cbf5202c3cf7"
+}
+
+### deleteListItem (OK)
+DELETE http://localhost:3306/shp-list/edit
+Content-Type: application/json
+
+{
+    "item_id": "a84ddb7c-9b47-4448-b3d4-12dd09a8f254"
+}
+
+### alterShoppingList (OK)
+PUT http://localhost:3306/shp-list/edit
+Content-Type: application/json
+
+{
+    "user_id": "79782e6a-4980-4cc0-b068-7bc320ca5483",
+    "new_items": [
+        { 
+            "id": 98,
+            "desired_qty": 100
+        },
+        { 
+            "id": 18,
+            "desired_qty": 30
+        }
+    ]
+}
+
+
+    

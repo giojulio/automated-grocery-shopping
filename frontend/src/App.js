@@ -1,15 +1,13 @@
 import React from 'react';
+import GlobalState from './global/GlobalState';
 import { Router } from './routes/Router';
-import { GlobalStyles } from './GlobalStyles';
 
  const App = () => {
-  //maybe componentizze Container
+
     return (
-      <>
-      <Router/>
-      <GlobalStyles/>
-      
-      </>
+      <GlobalState>
+        <Router/>
+      </GlobalState>
     );
 };
 

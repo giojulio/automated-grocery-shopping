@@ -10,4 +10,9 @@ export const Container = styled.div`
     position: relative;
     bottom: 0;
     background-color: #2EAF7D;
+    button {
+        background-color: transparent;
+        border: none;
+        box-shadow: none;
+    };
 `;
