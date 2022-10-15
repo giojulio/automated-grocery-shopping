@@ -5,13 +5,18 @@
   "main": "index.js",
   "scripts": {
     "start": "tsc && node ./build/index.js",
-   	"migrations": "tsc && node ./build/database/migrations.js",
+    "migrations": "tsc && node ./build/database/sql/migrations.js",
     "dev": "ts-node-dev ./src/index.ts"
   },
-  "keywords": ["shopper", "node.js", "ts/js"],
+  "keywords": [
+    "shopper",
+    "node.js",
+    "ts/js"
+  ],
   "author": "gjulio98",
   "license": "ISC",
   "dependencies": {
+    "axios": "^1.1.2",
     "cors": "^2.8.5",
     "dotenv": "^16.0.3",
     "express": "^4.18.1",

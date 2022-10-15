@@ -1,15 +1,18 @@
-import { IProduct } from "../models/IProduct"
 import { BaseDatabase } from "./BaseDatabase"
 
 
 export class ProductDatabase extends BaseDatabase {
-    TABLE_NAME = "Shopper_Products"
-    
-    public getById = async(id: number): Promise<IProduct> => {
-		return super.getById(id)
+	TABLE_NAME = "Shp_Products"
+
+	public async getAllFrom() {
+		return super.getAllFrom()
 	}
 
-    public setNewValue = async(id: any, column: string, value: any): Promise<void> => {
+	public async getById(value: any) {
+		return super.getById(value)
+	}
+
+	public async setNewValue(id: any, column: string, value: any) {
 		super.setNewValue(id, column, value)
 	}
 }
