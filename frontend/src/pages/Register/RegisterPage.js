@@ -1,56 +1,34 @@
 import axios from 'axios';
-import React, { useEffect } from 'react';
+import React from 'react';
 import { useNavigate } from 'react-router-dom';
-import { Dates } from '../../components/Dates/Dates';
+// import { Dates } from '../../components/Dates/Dates';
 import { Footer } from '../../components/Footer/Footer';
 import { Header } from '../../components/Header/Header';
 import useForm from '../../hooks/useForm';
 import { goToHome } from '../../routes/coordinator';
 import { Form } from './StyledRegisterPage';
 import { Container } from '../../components/Container/Container';
+import { BASE_URL } from '../../constants/BASE_URL';
+
 
 const RegisterPage = () => {
 	const navigate = useNavigate();
 
-	const { form, setForm, onChange, cleanFields } = useForm({
+	const { form, onChange, cleanFields } = useForm({
 		name: '',
 		zipcode: 80000000,
 		number: 0,
-		street: '',
 		complement: '',
-		neighborhood: '',
-		city: '',
-		state: '',
 		month: 0,
 		day: 0,
 		email: '',
 		password: '',
 	});
 
-	const checkZipCode = form.zipcode.length === 8;
-
-	useEffect(() => {
-		axios
-			.get(`https://viacep.com.br/ws/${form.zipcode}/json/`)
-			.then((res) => {
-				setForm({
-					...form,
-					street: res.logradouro,
-					neighborhood: res.bairro,
-					city: res.localidade,
-					state: res.uf,
-				});
-			})
-			.catch((err) => {
-				console.log(err.response);
-			});
-
-	}, [checkZipCode, form, setForm]);
-
-	const onSubmitLogin = (event) => {
+	const onSubmitRegister = (event) => {
 		event.preventDefault();
 
-		const url = `api page/endpoint`;
+		const url = `${BASE_URL}/register`;
 
 		axios
 			.post(url, form)
@@ -60,55 +38,46 @@ const RegisterPage = () => {
 				goToHome(navigate);
 			})
 			.catch((error) => {
-				alert('There is missing or conflicting information. Please, try again.');
+				alert(
+					'There is missing or conflicting information. Please, try again.'
+				);
+				console.log(error.response)
 				cleanFields();
 			});
 	};
+
 
 	return (
 		<Container>
 			<Header />
 
-			<Form onSubmit={onSubmitLogin}>
-        <h3>Register below!</h3>
+			<Form onSubmit={onSubmitRegister}>
+				<h3>Register below!</h3>
+
 				<input
 					onChange={onChange}
 					required
 					name='name'
 					placeholder='Name'
 					value={form.name}
-					type='text'
 				/>
 
 				<input
 					onChange={onChange}
 					required
 					name='zipcode'
-					pattern='/^\d{5}-?\d{3}$/'
-					minLength={5}
-					maxLength='8'
 					placeholder='ZipCode'
 					value={form.zipcode}
 					type='numeric'
+					pattern='^[0-9]*$'
 				/>
-				
+
 				<input
 					onChange={onChange}
 					required
 					name='number'
 					placeholder='Number'
 					value={form.number}
-					type='numeric'
-				/>
-
-				<input
-					readOnly
-					required
-					name='street'
-					placeholder='Street'
-					value={form.street}
-					type='text'
-					maxLength={150}
 				/>
 
 				<input
@@ -117,50 +86,50 @@ const RegisterPage = () => {
 					name='complement'
 					placeholder='Complement'
 					value={form.complemet}
-					type='text'
-					maxLength={150}
 				/>
 
-				<input
-					readOnly
-					required
-					name='neighborhood'
-					placeholder='Neighborhood'
-					value={form.neighborhood}
-					type='text'
-					maxLength={150}
-				/>
+				{/* <Dates onChange={onChange} value={form.day} /> */}
+				<select name='day' onChange={onChange} placeholder='Delivery day' value={form.day}>
+					<option value=''>Delivery day</option>
+					<option value='01'>1</option>
+					<option value='02'>2</option>
+					<option value='03'>3</option>
+					<option value='04'>4</option>
+					<option value='05'>5</option>
+					<option value='06'>6</option>
+					<option value='07'>7</option>
+					<option value='08'>8</option>
+					<option value='09'>9</option>
+					<option value='10'>10</option>
+					<option value='11'>11</option>
+					<option value='12'>12</option>
+					<option value='13'>13</option>
+					<option value='14'>14</option>
+					<option value='15'>15</option>
+					<option value='16'>16</option>
+					<option value='17'>17</option>
+					<option value='18'>18</option>
+					<option value='19'>19</option>
+					<option value='20'>20</option>
+					<option value='21'>21</option>
+					<option value='22'>22</option>
+					<option value='23'>23</option>
+					<option value='24'>24</option>
+					<option value='25'>25</option>
+					<option value='26'>26</option>
+					<option value='27'>27</option>
+					<option value='28'>28</option>
+					<option value='29'>29</option>
+					<option value='30'>30</option>
+					<option value='31'>31</option>
+				</select>
 
 				<input
-					readOnly
-					required
-					name='city'
-					placeholder='City'
-					value={form.city}
-					type='text'
-					maxLength={150}
-				/>
-
-				<input
-					readOnly
-					required
-					name='state'
-					placeholder='State'
-					value={form.state}
-					type='text'
-					maxLength={150}
-				/>
-
-				<Dates props={form} />
-
-				<input
-					label='E-mail'
 					onChange={onChange}
 					required
 					name='email'
 					placeholder='E-mail'
 					value={form.email}
-					type='email'
 				/>
 
 				<input

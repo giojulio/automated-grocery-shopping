@@ -7,4 +7,5 @@ export const Box = styled.div`
     align-items: center;
     height: 100vh;
     background-color: #C1F6ED;
+    overflow-x: hidden;
 `
