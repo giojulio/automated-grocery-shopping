@@ -1,4 +1,4 @@
-<h1><b>🛒Shopper.com 2022🛒</b></h1>
+<h1><b>🛒Shopper.com 2022🛒 - FRONTEND</b></h1>
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
@@ -7,17 +7,17 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 <br/>
 
 <h2>🚀 Deployment</h2>
-<p>You can find this project deployed by Surge on:<p>🌐<a href="link surge">surge</a>.
+<p>You can find this project deployed by Surge on:<p>🌐<a href="link surge">Awaiting deployment...</a>.
 <hr>
 <br/>
 
 <h2>🔆 What's working:</h2>
-<p></p>
+<p>Project meets all basic functions of handleing shopping lists, product lists, user verification, restricted access to sensitive areas and much more. Custom hooks, hooks, Global State, Router and componentizing practices were successfully implemented.</p>
 <hr>
 <br/>
 
 <h2>🔅 What's not working:</h2>
-<p>So far, this project is presented fully functional.</p>
+<p>'Contact Us' page and buttons, 'Forgot yous passwords?' page and links, Edit Profile page, Search Bars, and Dates component. UseEffect seems to be lagging. </p>
 <hr>
 <br/>
 
