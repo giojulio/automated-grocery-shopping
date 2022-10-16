@@ -1,8 +1,9 @@
 import React from "react";
-import { Container, Logo } from "./StyledHeader";
 import { useNavigate } from 'react-router-dom';
-import { goToProfile, goToHome, goToShoppingList } from "../../routes/coordinator";
+import { goToProfile, goToLogout, goToFeed, goToShoppingList } from "../../routes/coordinator";
 import logo from '../../assets/logo.png'
+import { Container, Logo } from "./StyledHeader";
+
 
 export const Header = (props) => {
     const navigate = useNavigate() 
@@ -17,11 +18,13 @@ export const Header = (props) => {
 
             { props.haveButton && 
                 <div>
-                    <button onClick={() => goToShoppingList(navigate)}>Shopping List</button>
+                    <button onClick={() => goToFeed(navigate)}>Feed</button>
 
+                    <button onClick={() => goToShoppingList(navigate)}>Shopping List</button>
+                    
                     <button onClick={() => goToProfile(navigate)}>Profile</button>
 
-                    <button onClick={() => goToHome(navigate)}>Logout</button>
+                    <button onClick={() => goToLogout(navigate)}>Logout</button>
                 </div>
             }
         </Container>

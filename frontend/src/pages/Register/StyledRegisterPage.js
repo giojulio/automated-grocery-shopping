@@ -7,11 +7,11 @@ export const Form = styled.form`
 	height: 67%;
 	width: 25%;
 	text-align: center;
-    margin: 0;
+	margin: 0;
 	h3 {
-        padding-bottom: 5px;
-    };
-    button {
-        margin-top: 2px;
-    };
+		padding-bottom: 5px;
+	};
+	button {
+		margin-top: 2px;
+	};
 `;

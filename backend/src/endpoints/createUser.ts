@@ -22,15 +22,18 @@ export const createUser = async (req: Request, res: Response) => {
 		if (zipcode.includes('-') || zipcode.length > 8) {
 			errorCode = 406;
 			throw new Error ("Zipcode must be only numbers.")
-		}
+		};
+
 		const address = await getAddress(zipcode);
-		if (!address) throw new Error('There is something whrong with zipcode information.')
+
+		if (!address) throw new Error('There is something whrong with zipcode information.');
 
 		if (!name || !zipcode || !address.street || !address.neighborhood || !address.city || !address.state || !day || !email || !password) {
 			throw new Error("Required fields must be filled.");
 		};
 
 		const verifyEmail = await new UserDatabase().getByEmail(email);
+
 		if (verifyEmail.length) {
 			errorCode = 409;
 			throw new Error('E-mail already registered in database');

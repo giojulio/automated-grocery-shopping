@@ -22,10 +22,10 @@ export const Option = styled.div`
 	align-items: center;
 	img {
 		padding-bottom: 25px;
-	}
+	};
 	button {
 		width: 90%;
-	}
+	};
 `;
 
 export const Welcome = styled.h2`

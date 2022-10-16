@@ -1,11 +1,11 @@
 import React from 'react';
-import { Footer } from '../../components/Footer/Footer';
-import { ErrorContainer, ErrorSign } from './StyledErrorPage';
-import { Header } from '../../components/Header/Header';
-import { goToHome } from '../../routes/coordinator';
 import { useNavigate } from 'react-router-dom';
-import error from '../../assets/error.png';
+import { goToHome } from '../../routes/coordinator';
+import { Header } from '../../components/Header/Header';
 import { Container } from '../../components/Container/Container';
+import { ErrorContainer, ErrorSign } from './StyledErrorPage';
+import { Footer } from '../../components/Footer/Footer';
+import error from '../../assets/error.png';
 
 
 const ErrorPage = () => {

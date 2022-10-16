@@ -1,14 +1,13 @@
-import axios from 'axios';
 import React from 'react';
-import { useNavigate } from 'react-router-dom';
-// import { Dates } from '../../components/Dates/Dates';
-import { Footer } from '../../components/Footer/Footer';
-import { Header } from '../../components/Header/Header';
-import useForm from '../../hooks/useForm';
-import { goToHome } from '../../routes/coordinator';
-import { Form } from './StyledRegisterPage';
-import { Container } from '../../components/Container/Container';
+import axios from 'axios';
 import { BASE_URL } from '../../constants/BASE_URL';
+import { useNavigate } from 'react-router-dom';
+import { goToHome } from '../../routes/coordinator';
+import useForm from '../../hooks/useForm';
+import { Header } from '../../components/Header/Header';
+import { Container } from '../../components/Container/Container';
+import { Footer } from '../../components/Footer/Footer';
+import { Form } from './StyledRegisterPage';
 
 
 const RegisterPage = () => {
@@ -41,11 +40,10 @@ const RegisterPage = () => {
 				alert(
 					'There is missing or conflicting information. Please, try again.'
 				);
-				console.log(error.response)
+				console.log(error.response);
 				cleanFields();
 			});
 	};
-
 
 	return (
 		<Container>
@@ -89,7 +87,7 @@ const RegisterPage = () => {
 				/>
 
 				{/* <Dates onChange={onChange} value={form.day} /> */}
-				<select name='day' onChange={onChange} placeholder='Delivery day' value={form.day}>
+				<select	name='day' onChange={onChange} placeholder='Delivery day' value={form.day}>
 					<option value=''>Delivery day</option>
 					<option value='01'>1</option>
 					<option value='02'>2</option>

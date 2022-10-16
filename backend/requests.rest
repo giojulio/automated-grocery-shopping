@@ -4,6 +4,9 @@ GET http://localhost:3306/products
 ### getShoppingList (OK)
 GET http://localhost:3306/shp-list/79782e6a-4980-4cc0-b068-7bc320ca5483
 
+### getUser
+GET http://localhost:3306/profile/79782e6a-4980-4cc0-b068-7bc320ca5483
+
 ### createLogin (OK)
 POST http://localhost:3306/login
 Content-Type: application/json
@@ -13,22 +16,18 @@ Content-Type: application/json
     "password": "pwd"
 }
 
-### createShoppingList (OK)
+### createShoppingItem (OK)
 POST http://localhost:3306/shp-list
 Content-Type: application/json
 
 {
     "user_id": "79782e6a-4980-4cc0-b068-7bc320ca5483",
-    "products": [
+    "product": 
         { 
             "id": "20",
             "desired_qty": 40
-        },
-        { 
-            "id": "78",
-            "desired_qty": 1
         }
-    ]
+    
 }
 
 ### createUser (OK)
@@ -46,20 +45,12 @@ Content-Type: application/json
 }
 
 ### deleteShoppingList
-DELETE http://localhost:3306/shp-list
-Content-Type: application/json
+DELETE http://localhost:3306/shp-list/79782e6a-4980-4cc0-b068-7bc320ca5483
 
-{
-    "user_id": "3acf36e4-ed0a-458b-98b0-cbf5202c3cf7"
-}
 
 ### deleteListItem (OK)
-DELETE http://localhost:3306/shp-list/edit
-Content-Type: application/json
+DELETE http://localhost:3306/shp-list/edit/:id
 
-{
-    "item_id": "a84ddb7c-9b47-4448-b3d4-12dd09a8f254"
-}
 
 ### alterShoppingList (OK)
 PUT http://localhost:3306/shp-list/edit
@@ -67,17 +58,10 @@ Content-Type: application/json
 
 {
     "user_id": "79782e6a-4980-4cc0-b068-7bc320ca5483",
-    "new_items": [
+    "new_item": 
         { 
             "id": 98,
             "desired_qty": 100
-        },
-        { 
-            "id": 18,
-            "desired_qty": 30
         }
-    ]
-}
-
-
     
+} 

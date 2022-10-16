@@ -1,14 +1,33 @@
-import React, { useState } from "react";
-import GlobalContext from "./GlobalContext";
+import React, { useEffect, useState } from 'react';
+import axios from 'axios';
+import { BASE_URL } from '../constants/BASE_URL';
+import GlobalContext from './GlobalContext';
+import useShoppingList from '../hooks/useShoppingList';
+
 
 const GlobalState = (props) => {
-    const [userId, setUserId ] = useState('')
-    
-    return(
-        <GlobalContext.Provider value={{userId, setUserId}}>
-            {props.children}
-        </GlobalContext.Provider>
-    )
-}
+	const [user, setUser] = useState({});
+	const shoppingList = useShoppingList();
 
-export default GlobalState
+	useEffect(() => {
+		const userId = localStorage.getItem('id');
+
+		axios
+			.get(`${BASE_URL}/profile/${userId}`)
+			.then((res) => {
+				setUser(res.data.user);
+			})
+			.catch((err) => {
+				console.log(err);
+			});
+	}, []);
+
+
+	return (
+		<GlobalContext.Provider value={{ user, setUser, shoppingList }}>
+			{props.children}
+		</GlobalContext.Provider>
+	);
+};
+
+export default GlobalState;

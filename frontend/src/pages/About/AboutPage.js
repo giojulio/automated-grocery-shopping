@@ -1,15 +1,15 @@
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
-import { Container } from '../../components/Container/Container';
-import { Footer } from '../../components/Footer/Footer';
-import { Header } from '../../components/Header/Header';
 import { goToHome } from '../../routes/coordinator';
+import { Container } from '../../components/Container/Container';
 import { AboutContainer } from './StyledAboutPage';
+import { Header } from '../../components/Header/Header';
+import { Footer } from '../../components/Footer/Footer';
 
 
 const AboutPage = () => {
-  const navigate = useNavigate();
-  
+	const navigate = useNavigate();
+
 	return (
 		<Container>
 			<Header />
@@ -53,7 +53,7 @@ const AboutPage = () => {
 				</p>
 			</AboutContainer>
 
-      <button onClick={() => goToHome(navigate)}>Home</button>
+			<button onClick={() => goToHome(navigate)}>Home</button>
 
 			<Footer />
 		</Container>
