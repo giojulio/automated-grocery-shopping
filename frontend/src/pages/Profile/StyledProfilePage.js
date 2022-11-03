@@ -13,8 +13,8 @@ export const InfoContainer = styled.div`
 	flex-direction: row;
 	padding: 25px;
 	justify-content: space-between;
-	box-shadow: inset 0 0 10px rgba(68, 147, 66, 1);
-	background: rgba(2, 53, 60, 0.15);
+	box-shadow: inset 0 0 10px rgba(68, 147, 66, 2);
+	background: rgba(224, 222, 202, 1);
 	border-radius: 10px;
 `;
 export const HeadersContainer = styled.div`
@@ -49,8 +49,9 @@ export const ProductsContainer = styled.div`
 	width: 97%;
 	height: 90%;
 	overflow-y: scroll;
+	overflow-x: hidden;
 	box-shadow: inset 0 0 10px rgba(2, 53, 60, 1);
-	background: rgba(2, 53, 60, 0.5);
+	background: rgba(199, 211, 111, 0.5);
 	border-radius: 10px;
 	div {
 		width: 96%;

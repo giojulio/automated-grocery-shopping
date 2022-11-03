@@ -7,7 +7,7 @@ export const Container = styled.div`
 	flex-direction: row;
 	align-items: center;
 	justify-content: space-around;
-	background-color: #2eaf7d;
+	background-color: #9EB23B;
 	border-bottom: solid 1px #449342;
 	font-weight: bolder;
 	div {

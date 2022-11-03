@@ -1,20 +1,8 @@
 import { app } from "./app";
-import { alterShoppingList } from "./endpoints/alterListItem";
-import { createShoppingItem } from "./endpoints/createShoppingItem";
-import { createUser } from "./endpoints/createUser";
-import { deleteListItem } from "./endpoints/deleteListItem";
-import { getAllProducts } from "./endpoints/getAllProducts";
-import { getShoppingList } from "./endpoints/getShoppingList";
-import { createLogin } from "./endpoints/createLogin";
-import { deleteShoppingList } from "./endpoints/deleteShoppingList";
-import { getUser } from "./endpoints/getUser";
+import { productRouter } from "./controller/router/ProductRouter";
+import { shoppingListRouter } from "./controller/router/ShoppingListRouter";
+import { userRouter } from "./controller/router/UserRouter";
 
-app.get('/products', getAllProducts);
-app.get('/shp-list/:id', getShoppingList);
-app.get('/profile/:id', getUser);
-app.post('/login', createLogin);
-app.post('/shp-list', createShoppingItem);
-app.post('/register', createUser);
-app.delete('/shp-list/:user_id', deleteShoppingList);
-app.delete('/shp-list/edit/:item_id', deleteListItem);
-app.put('/shp-list/edit', alterShoppingList);
+app.use('/', userRouter);
+app.use('/products', productRouter);
+app.use('/shp-list', shoppingListRouter);

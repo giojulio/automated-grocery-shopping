@@ -15,3 +15,7 @@ export const Form = styled.form`
 		margin-top: 2px;
 	};
 `;
+
+export const ColorChange = styled.div`
+	background-color: #C7D36F;
+`

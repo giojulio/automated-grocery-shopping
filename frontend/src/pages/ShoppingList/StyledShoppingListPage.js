@@ -7,7 +7,7 @@ export const Pannel = styled.div`
 	border: solid 1px black;
 	height: 75%;
 	box-shadow: inset 0 0 10px rgba(2, 53, 60, 1);
-	background: rgba(2, 53, 60, 0.5);
+	background: rgba(199, 211, 111, 0.5);
 	border-radius: 10px;
 	hr {
 		border: 1.5px solid green;

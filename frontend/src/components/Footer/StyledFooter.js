@@ -9,10 +9,5 @@ export const Container = styled.div`
     justify-content: space-around;
     position: relative;
     bottom: 0;
-    background-color: #2EAF7D;
-    button {
-        background-color: transparent;
-        border: none;
-        box-shadow: none;
-    };
+    background-color: #9EB23B;
 `;

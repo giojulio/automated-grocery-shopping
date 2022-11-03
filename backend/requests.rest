@@ -4,7 +4,7 @@ GET http://localhost:3306/products
 ### getShoppingList (OK)
 GET http://localhost:3306/shp-list/79782e6a-4980-4cc0-b068-7bc320ca5483
 
-### getUser
+### getUser (OK)
 GET http://localhost:3306/profile/79782e6a-4980-4cc0-b068-7bc320ca5483
 
 ### createLogin (OK)
@@ -35,16 +35,16 @@ POST http://localhost:3306/register
 Content-Type: application/json
 
 {
-    "name": "Gina",
-    "zipcode": "80730460",
-    "number": 2974,
-    "complement": "AP02",
-    "day": 7,
-    "email": "gi@gi.com",
-    "password": "pwd"
+    "name": "GicaA",
+    "zipcode": "80620100",
+    "number": 100,
+    "complement": "AP42",
+    "day": 9,
+    "email": "giovanna@gi.com",
+    "password": "pwd123"
 }
 
-### deleteShoppingList
+### deleteShoppingList (OK)
 DELETE http://localhost:3306/shp-list/79782e6a-4980-4cc0-b068-7bc320ca5483
 
 
@@ -60,8 +60,8 @@ Content-Type: application/json
     "user_id": "79782e6a-4980-4cc0-b068-7bc320ca5483",
     "new_item": 
         { 
-            "id": 98,
-            "desired_qty": 100
+            "id": 20,
+            "desired_qty": 25
         }
     
 } 

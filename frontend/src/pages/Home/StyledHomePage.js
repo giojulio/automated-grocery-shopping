@@ -5,6 +5,7 @@ export const OptionsContainer = styled.div`
 	flex-direction: row;
 	justify-content: space-evenly;
 	width: 100%;
+	background-color: #C7D36F;
 `;
 
 export const Icon = styled.img`
@@ -17,7 +18,7 @@ export const Option = styled.div`
 	flex-direction: column;
 	border-radius: 20px;
 	padding: 10px;
-	background-color: #2eaf7d;
+	background-color: #C7D36F;
 	width: 40%;
 	align-items: center;
 	img {
