@@ -10,6 +10,7 @@ import { Footer } from '../../components/Footer/Footer';
 import { Form } from './StyledRegisterPage';
 
 
+
 const RegisterPage = () => {
 	const navigate = useNavigate();
 
@@ -34,6 +35,7 @@ const RegisterPage = () => {
 			.then((response) => {
 				alert('Registration completed!');
 				cleanFields();
+				console.log(response.data)
 				goToHome(navigate);
 			})
 			.catch((error) => {
@@ -46,7 +48,8 @@ const RegisterPage = () => {
 	};
 
 	return (
-		<Container>
+		<Container isLogging={true}>
+
 			<Header />
 
 			<Form onSubmit={onSubmitRegister}>
@@ -145,6 +148,7 @@ const RegisterPage = () => {
 			<button onClick={() => goToHome(navigate)}>Home</button>
 
 			<Footer />
+
 		</Container>
 	);
 };

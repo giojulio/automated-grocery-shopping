@@ -3,22 +3,22 @@ import axios from 'axios';
 import { BASE_URL } from '../constants/BASE_URL';
 
 
-const useShoppingList = () => {
-	const [shoppingList, setShoppingList] = useState([]);
+const useProfile = () => {
+	const [user, setUser] = useState({});
 
 	useEffect(() => {
 		const id = localStorage.getItem('id')
 		axios
-			.get(`${BASE_URL}/shp-list/${id}`)
+			.get(`${BASE_URL}/profile/${id}`)
 			.then((response) => {
-				setShoppingList(response.data.shoppingList);
+				setUser(response.data.user);
 			})
 			.catch((error) => {
 				console.log(error.response);
 			});
-	}, [shoppingList]);
+	}, []);
 
-	return shoppingList;
+	return user;
 };
 
-export default useShoppingList;
+export default useProfile;

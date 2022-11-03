@@ -9,9 +9,9 @@ export const Container = styled.div`
 	justify-content: space-between;
 	margin: 10px;
 	padding: 10px 5px;
-	background-color: rgba(68, 206, 152, 0.75);
+	background-color: #C7D36F;
 	border-radius: 15px;
-	box-shadow: 5px 5px #02353c;
+	box-shadow: 5px 5px #9EB23B;
 `;
 export const ProdImg = styled.img`
 	height: 80px;

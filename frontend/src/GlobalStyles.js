@@ -11,9 +11,9 @@ export const GlobalStyles = createGlobalStyle`
     button {
         padding: 5px;
         border-radius: 10px;
-        border: solid 0.5px #449342;
-        color: #02353C;
-        background-color: #449342;
+        border: solid 0.5px #02353C;
+        color: #9EB23B;
+        background-color: #FCF9C6;
         font-weight: bolder;
         box-shadow: 1px 1px #02353C;
         :hover, :focus {
@@ -23,14 +23,16 @@ export const GlobalStyles = createGlobalStyle`
     }
 
     h1, h2, h3, p {
-        color: #02353C;
+        color: #449342;
+        text-shadow: 1px 1px #02353C;
+        font-weight: bolder;
     }
 
     input, select {
         border-radius: 5px;
-        border: solid 0.5px #449342;
-        color: #02353C;
-        background-color: white;
+        border: solid 0.5px #02353C;
+        color: #9EB23B;
+        background-color: #FCF9C6;
         font-weight: bolder;
         box-shadow: 1px 1px #02353C;
         padding: 5px;

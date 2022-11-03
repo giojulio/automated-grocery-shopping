@@ -6,6 +6,6 @@ export const Box = styled.div`
 	justify-content: space-between;
 	align-items: center;
 	height: 100vh;
-	background-color: #c1f6ed;
+	background-color: #FCF9C6;
 	overflow-x: hidden;
 `;
